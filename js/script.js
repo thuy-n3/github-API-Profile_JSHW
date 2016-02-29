@@ -8,8 +8,8 @@
 
 // var url: https://api.github.com/users/thuy-n3
 
-console.log($)
-console.log("Hello World")
+//console.log($)
+//console.log("Hello World")
 
 
 
@@ -52,9 +52,9 @@ var fetchAndShowUserProfileAndRepo = function(someUser){
 //------------Profile-------------------------------------
 
 var showGitData = function(receivedData) {
-    console.log(receivedData)
+    //console.log(receivedData)
 
-    console.log(receivedData.name)
+    //console.log(receivedData.name)
 
 
     var profileInfoHTMLString = ""
@@ -89,14 +89,14 @@ var showGitData = function(receivedData) {
 
 
 var showRepoData = function(receivedRepoData) {
-    console.log(receivedRepoData)
+    //console.log(receivedRepoData)
 
     var repoDataArr = receivedRepoData
 
     var repoIntoHTML = ""
 
     for (var i = 0; i < repoDataArr.length; i++) {
-        console.log(repoDataArr[i].name)
+        //console.log(repoDataArr[i].name)
 
         repoIntoHTML += '<div class="repoListingBox">'
         repoIntoHTML +=     '<h2 class="repoName">' + repoDataArr[i].name + '</h2>'
@@ -119,7 +119,7 @@ var showRepoData = function(receivedRepoData) {
 
 var searchInput_el = document.querySelector(".searchInput") //selecting the search box
 
-console.log(searchInput_el)
+//console.log(searchInput_el)
 
 
 searchInput_el.addEventListener("keypress", function(evt){  
@@ -128,12 +128,13 @@ searchInput_el.addEventListener("keypress", function(evt){
     // console.log(evt.keyCode)
 
     if(evt.keyCode === 13){
-        console.log("enter keypressed")
+        //console.log("enter keypressed")
         // console.log(evt.target.value)
 
         var baseUser = evt.target.value //evt.target.value is what being typed in the search box (ie. the username)
 
             window.location.hash = "#" + baseUser  //baseUser is thuy-n3??
+            
         
         evt.target.value = "" 
     }
@@ -142,7 +143,18 @@ searchInput_el.addEventListener("keypress", function(evt){
 
 //------------Runs At Initilaization--------------------------------------
 
-fetchAndShowUserProfileAndRepo('thuy-n3')
+
+//checking to see if there is a hash in the url bar 
+
+var userInHash = window.location.hash.slice(1)     //need to slice of the #
+    
+if (userInHash.length >= 1 ){                     //if the length is more than 1, it mean there is something in the url bar 
+    fetchAndShowUserProfileAndRepo(userInHash)
+}
+else{
+    fetchAndShowUserProfileAndRepo("thuy-n3")   //if there no hash than go get my page (thuy-n3)
+}
+
 
 // ^^Shortened from :
   
