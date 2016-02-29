@@ -8,19 +8,29 @@
 
 // var url: https://api.github.com/users/thuy-n3
 
-
 console.log($)
 console.log("Hello World")
 
 
+
+// var makeProfileURL =  function(usr){
+//     var keyParam = "access_token=" + apiKey
+//     return "https://api.github.com/users/" + usr + "?" + keyParam
+// }
+
 var makeProfileURL = function(usr){
-    return "https://api.github.com/users/" + usr + "?" 
+    return "http://api.github.com/users/" + usr + "?"
 }
 
+// var makeRepoURL = function(usr){
+//     var keyParam = "access_token=" + apiKey
+//     return "https://api.github.com/users/"+  usr  +"/repos" + "?" + keyParam
+// } 
 
 
-var makeProfileURL = function(usr){
-    return "https://api.github.com/users/" + usr + "/repo" + "?"
+var makeRepoURL = function(usr){
+    return "http://api.github.com/users/" + usr + "/repos" + "?"
+
 }
 
 var profileContainer = document.querySelector('.profileContainer')
