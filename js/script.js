@@ -12,19 +12,12 @@
 console.log($)
 console.log("Hello World")
 
-// var makeProfileURL =  function(usr){
-//     var keyParam = "access_token=" + apiKey
-//     return "https://api.github.com/users/" + usr + "?" + keyParam
-// }
 
 var makeProfileURL = function(usr){
     return "https://api.github.com/users/" + usr + "?" 
 }
 
-// var makeRepoURL = function(usr){
-//     var keyParam = "access_token=" + apiKey
-//     return "https://api.github.com/users/"+  usr  +"/repos" + "?" + keyParam
-// } 
+
 
 var makeProfileURL = function(usr){
     return "https://api.github.com/users/" + usr + "/repo" + "?"
