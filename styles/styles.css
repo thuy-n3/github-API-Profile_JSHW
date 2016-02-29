@@ -156,6 +156,9 @@ span.joined{
 	text-align: left;
 	line-height: 16px;
 	/*position: absolute;*/
+	/*display: block;*/
+/*	margin: 5px;*/
+
 
 }
 
@@ -184,7 +187,7 @@ span.joined{
 
 /*/----Media Styling-----------------//*/
 
-@media only screen and (max-width: 775px){
+@media only screen and (max-width: 600px){
 
 	#bodyContainer{
 		display: block;

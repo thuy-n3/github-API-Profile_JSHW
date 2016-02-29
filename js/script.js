@@ -7,30 +7,38 @@
 
 
 // var url: https://api.github.com/users/thuy-n3
- 
 
 
 console.log($)
 console.log("Hello World")
 
-var makeProfileURL =  function(usr){
-    var keyParam = "access_token=" + apiKey
-    return "https://api.github.com/users/" + usr + "?" + keyParam
+// var makeProfileURL =  function(usr){
+//     var keyParam = "access_token=" + apiKey
+//     return "https://api.github.com/users/" + usr + "?" + keyParam
+// }
+
+var makeProfileURL = function(usr){
+    return "https://api.github.com/users/" + usr + "?" 
 }
 
-var makeRepoURL = function(usr){
-    var keyParam = "access_token=" + apiKey
-    return "https://api.github.com/users/"+  usr  +"/repos" + "?" + keyParam
-} 
+// var makeRepoURL = function(usr){
+//     var keyParam = "access_token=" + apiKey
+//     return "https://api.github.com/users/"+  usr  +"/repos" + "?" + keyParam
+// } 
+
+var makeProfileURL = function(usr){
+    return "https://api.github.com/users/" + usr + "/repo" + "?"
+}
 
 var profileContainer = document.querySelector('.profileContainer')
 var repoContainer = document.querySelector('.repoContainer')
 
-var fetchAndShowUserProflieAndRepo = function(someUser){
+var fetchAndShowUserProfileAndRepo = function(someUser){
 
     // Promise Making (i.e. fetch data and promise to return later)
     var gitProfilePromise = $.getJSON( makeProfileURL( someUser ) )
     var gitRepoPromise = $.getJSON( makeRepoURL( someUser ) )
+
 
     // Promise handling (...when data is received from promise THEN run the function inside .then() )
     gitProfilePromise.then(showGitData)
@@ -120,9 +128,9 @@ searchInput_el.addEventListener("keypress", function(evt){
         console.log("enter keypressed")
         // console.log(evt.target.value)
 
-        var baseUser = evt.target.value 
+        var baseUser = evt.target.value //evt.target.value is what being typed in the search box (ie. the username)
 
-            window.location.hash = "#" + baseUser
+            window.location.hash = "#" + baseUser  //baseUser is thuy-n3??
         
         evt.target.value = "" 
     }
@@ -131,7 +139,7 @@ searchInput_el.addEventListener("keypress", function(evt){
 
 //------------Runs At Initilaization--------------------------------------
 
-fetchAndShowUserProflieAndRepo('thuy-n3')
+fetchAndShowUserProfileAndRepo('thuy-n3')
 
 // ^^Shortened from :
   
@@ -146,10 +154,11 @@ fetchAndShowUserProflieAndRepo('thuy-n3')
 window.addEventListener("hashchange", function(){
     var topLevelContainer_el = document.querySelector('#bodyContainer')
 
-    var userWithHash = window.location.hash
+    var userWithHash = window.location.hash //name enter on the url address line 
     var userNoHash = userWithHash.slice(1) // slices the string from index-1 to the end 
+    //name enter in the search box
     
-    fetchAndShowUserProflieAndRepo(userNoHash)
+    fetchAndShowUserProfileAndRepo(userNoHash)
 
         // ^^Shortened from :
               
@@ -158,7 +167,6 @@ window.addEventListener("hashchange", function(){
 
               // gitProfilePromise.then(showGitData)
               // gitRepoPromise.then(showRepoData)
-
 
             // clear out the values
 
