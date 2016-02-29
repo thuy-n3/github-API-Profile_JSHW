@@ -182,3 +182,17 @@ span.joined{
 }
 
 
+/*/----Media Styling-----------------//*/
+
+@media only screen and (max-width: 775px){
+
+	#bodyContainer{
+		display: block;
+	}
+	.profileContainer{
+		width: 100%;
+	}
+	.repoContainer{
+		width: 100%;
+	}
+}

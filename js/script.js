@@ -7,7 +7,7 @@
 
 
 // var url: https://api.github.com/users/thuy-n3
- // var apiKey = "a9572da90bab7857d459815e742d43a6559f6686"
+
 
 
 console.log($)
