@@ -1,0 +1,184 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+/* 	font:Helvetica, 
+ 		arial, nimbussansl, 
+ 		liberationsans, freesans, 
+ 		clean, sans-serif;*/
+
+ 	font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	word-wrap: break-word;
+	
+}
+
+.align-children{
+	font-size: 0;
+}
+
+.align-children > * {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#bodyContainer{
+	/*height: 850px;*/
+	max-width: 100%;
+	/*border: 2px solid blue;*/
+	margin: auto;
+	/*padding-top: 20px;*/
+}
+
+.topContainer{
+	/*height: 100px;*/
+	width: 100%;
+	border: 3px solid #edf1f4;
+	background: #edf1f4;
+}
+
+/*.octicon-logo-github{
+	left: 35px;
+}*/
+
+.searchInput {
+	width: 200px;
+	display: block;
+	position: relative;
+	min-height: 26px;
+	line-height: 17px;
+	font-size: 12px;
+	padding: 2px;
+	left: 45px;
+	top: -25px;
+
+
+}
+
+/*//----font styling-------------//*/
+
+
+h1 {
+	font-size: 25px;	
+}
+
+h2{
+	font-size: 22px;
+}
+
+h3{
+	font-size: 20px;
+	color: #4078C0;
+}
+
+p{
+	font-size: 16px;
+	color: #4078C0; /*need to adjust color for repo side*/
+}
+
+span.joined{
+	font-size: 14px;
+}
+
+
+
+/*//-----profile-------------------//*/
+
+.profileContainer{
+/*	height: 750px;*/
+	width: 30%;
+	padding-top: 20px;
+	/*border: 3px solid green;*/
+	/*font-size: 20px;*/
+}
+
+.profilePic{
+	/*width: 85%;*/
+	width: 250px;
+	height: 250px;
+	display: inline-block;
+	vertical-align: middle;	
+	overflow: hidden;
+	border-radius: 2%;
+}
+
+.profileName{
+	/*font-size: 20px;*/
+	line-height: 16px;
+	padding-left: 20px;
+	display: block;  
+}
+
+.profileDetails{
+	/*margin: 25px auto;*/
+	display: block;
+	/*font-size: 20px;*/
+	text-align: left;
+	line-height: 16px;
+	padding-left: 20px;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+
+}
+
+/*.followersIconRow{
+	width: 30%;
+	height: 200px;
+	border: 3px solid grey;
+}
+*/
+
+.followersDetails{
+	display: block;
+	text-align: center;
+	font-size: 15px;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	
+}
+
+.followersDetails .followerStats{
+	/*display: block;*/
+	font-size: 12px;
+	width: 33%;
+	
+
+}
+
+/*//-----Repo-----------------------//*/
+
+.repoContainer{
+/*	height: 750px;*/
+	width: 70%; 
+	/*border: 3px solid red;*/
+	/*font-size: 20px;*/
+	padding-left: 20px;
+	text-align: left;
+	line-height: 16px;
+	/*position: absolute;*/
+
+}
+
+.repoListing{
+	/*border-bottom: 1px solid #e5e5e5;*/
+	/*padding-left: 20px;
+	text-align: left;
+	line-height: 16px;*/
+}
+
+.octicon-git-branch{
+	text-align: right;
+	display: inline-block;
+	position: absolute;
+	/*left: 65px;*/
+	padding-left: 700px;
+/*	vertical-align: bottom;
+	overflow: hidden;*/
+}
+
+.octicon-star{
+	text-align: right;
+	padding-left: 660px;
+}
+
+

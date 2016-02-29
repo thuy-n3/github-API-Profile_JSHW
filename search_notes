@@ -1,0 +1,320 @@
+working code to load full page info with no search box
+
+
+//Your profile: https://api.github.com/users/<username>
+//Your repos: https://api.github.com/users/<username>/repos
+
+
+// var url: https://api.github.com/users/thuy-n3
+
+
+console.log($)
+console.log("Hello World")
+
+var profileUrl = "https://api.github.com/users/thuy-n3" + apiKey
+
+var repoUrl = "https://api.github.com/users/thuy-n3/repos" + apiKey
+
+var profileContainer = document.querySelector('.profileContainer')
+var repoContainer = document.querySelector('.repoContainer')
+
+
+var gitProfilePromise = $.getJSON(profileUrl)
+var gitRepoPromise = $.getJSON(repoUrl)
+
+
+//------------Profile-------------------------------------
+
+var showGitData = function(receivedData) {
+    console.log(receivedData)
+
+    console.log(receivedData.name)
+
+
+    var profileInfoHTMLString = ""
+
+    profileInfoHTMLString += '<img class="profilePic" src="' + receivedData.avatar_url + '">'
+
+    profileInfoHTMLString += '<div class="profileDetails">' 
+    profileInfoHTMLString += 	'<h1>' + receivedData.name + '<h1>'
+    profileInfoHTMLString += 	'<h3>' + receivedData.login + '<h3>'
+    profileInfoHTMLString += 	'<p>' + receivedData.location + '</p>' 
+    profileInfoHTMLString += 	'<p>' + receivedData.email + '</p>'
+    profileInfoHTMLString += 	'<p>' + receivedData.blog + '</p>'
+    profileInfoHTMLString += 	'<p>' + receivedData.created_at + '<p>'
+    profileInfoHTMLString += '</div>' 
+
+
+
+    //need to get icons for items below
+    // profileInfo += '<div>' +receivedData.followers_url+ '<div>'
+    // profileInfo += '<div>' +receivedData.starred_url+ '<div>'
+    // profileInfo += '<div>' +receivedData.following_url+ '<div>'
+
+
+
+    profileContainer.innerHTML = profileInfoHTMLString
+
+}
+
+
+
+//------------Repo Data------------------------------------
+
+
+var repoData = function(receivedRepoData) {
+    console.log(receivedRepoData)
+
+    var repoDataArr = receivedRepoData
+
+    var repoIntoHTML = ""
+
+    for (var i = 0; i < repoDataArr.length; i++) {
+        console.log(repoDataArr[i].name)
+
+        repoIntoHTML += '<div>'
+        repoIntoHTML += 	'<h3>' + repoDataArr[i].name + '</h3>'
+        repoIntoHTML += 	'<p>' + repoDataArr[i].created_at + '</p>'
+        repoIntoHTML += 	'<p>' + repoDataArr[i].updated_at + '</p>'
+        repoIntoHTML += '</div>'
+
+
+    }
+
+
+    repoContainer.innerHTML = repoIntoHTML
+
+}
+
+
+//------------Running-----------------------------------
+
+gitProfilePromise.then(showGitData)
+
+gitRepoPromise.then(repoData)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Your profile: https://api.github.com/users/<username>
+//Your repos: https://api.github.com/users/<username>/repos
+
+
+// var url: https://api.github.com/users/thuy-n3
+
+// var apiKey = "?access_token=a9572da90bab7857d459815e742d43a6559f6686"
+
+// var baseUrl = "https://api.github.com/users"
+
+// var fullUrl = baseUrl + "?" + apiKey
+
+console.log($)
+console.log("Hello World")
+
+var profileUrl = "https://api.github.com/users/thuy-n3" + apiKey
+
+var repoUrl = "https://api.github.com/users/thuy-n3/repos" + apiKey
+
+var profileContainer = document.querySelector('.profileContainer')
+var repoContainer = document.querySelector('.repoContainer')
+
+// var inputEl = document.querySelector('.searchInput')
+
+var gitProfilePromise = $.getJSON(profileUrl)
+var gitRepoPromise = $.getJSON(repoUrl)
+
+
+
+//------------Profile-------------------------------------
+
+var showGitData = function(receivedData) {
+    console.log(receivedData)
+
+    console.log(receivedData.name)
+
+
+    var profileInfoHTMLString = ""
+
+    profileInfoHTMLString += '<img class="profilePic" src="' + receivedData.avatar_url + '">'
+
+    profileInfoHTMLString += '<div class="profileDetails">' 
+    profileInfoHTMLString +=    '<h1 class="profileName">' + receivedData.name + '<h1>'
+    profileInfoHTMLString +=    '<h3>' + receivedData.login + '<h3>'
+    profileInfoHTMLString +=    '<p>' + receivedData.location + '</p>' 
+    profileInfoHTMLString +=    '<p>' + receivedData.email + '</p>'
+    profileInfoHTMLString +=    '<p>' + receivedData.blog + '</p>'
+    profileInfoHTMLString +=    '<p>' + receivedData.created_at + '<p>'
+    profileInfoHTMLString += '</div>' 
+
+
+
+    //need to get icons for items below
+    // profileInfo += '<div>' +receivedData.followers_url+ '<div>'
+    // profileInfo += '<div>' +receivedData.starred_url+ '<div>'
+    // profileInfo += '<div>' +receivedData.following_url+ '<div>'
+
+
+
+    profileContainer.innerHTML = profileInfoHTMLString
+
+}
+
+
+
+//------------Repo Data------------------------------------
+
+
+var repoData = function(receivedRepoData) {
+    console.log(receivedRepoData)
+
+    var repoDataArr = receivedRepoData
+
+    var repoIntoHTML = ""
+
+    for (var i = 0; i < repoDataArr.length; i++) {
+        console.log(repoDataArr[i].name)
+
+        repoIntoHTML += '<div>'
+        repoIntoHTML +=     '<h3>' + repoDataArr[i].name + '</h3>'
+        repoIntoHTML +=     '<p>' + repoDataArr[i].created_at + '</p>'
+        // repoIntoHTML +=  '<p>' + repoDataArr[i].updated_at + '</p>'
+        repoIntoHTML += '</div>'
+
+    }
+
+
+    repoContainer.innerHTML = repoIntoHTML
+
+}
+
+//------------Search Feature-----------------------------------
+
+// var handleInput = function(keyEvent){
+//  if(keyEvent.keyCode === 13){
+//      var inputEl = keyEvent.target 
+//      var searchInput = inputEl.value 
+//      inputEl.value = ""
+//      location.hash = searchInput
+//  }
+// }
+
+// // var doSearchRequest = function (userName) {
+// //     var profileUrl = baseURL + userName
+// //     var userNamePromise = $.getJSON(profileUrl) 
+// //     userNamePromise.then(objectToHTML)       ----->//for the left column
+// //     var reposUrl = baseURL + userName + '/repos'
+// //     var userReposPromise = $.getJSON(reposUrl)   ---->//for the right column
+// //     userReposPromise.then(arrayToHTML)
+// // }
+
+// var doSearchRequest = function(userNameQuery){
+//  console.log(searchQuery)
+
+//  var userNamePromise = this.getUserUrl(userNameQuery);
+    
+
+
+// }
+
+
+
+//------------Running-----------------------------------
+
+gitProfilePromise.then(showGitData)
+
+gitRepoPromise.then(repoData)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-----random bits---------//
+
+  // profileInfoHTMLString += '<img class="profilePic" src="' + receivedData.avatar_url + '">'
+
+    // profileInfoHTMLString += '<div class="profileDetails">' 
+    // profileInfoHTMLString +=    '<h1>' + receivedData.name + '<h1>'
+    // profileInfoHTMLString +=    '<h3>' + receivedData.login + '<h3>'
+    // profileInfoHTMLString +=    '<p>' + receivedData.location + '</p>' 
+    // profileInfoHTMLString +=    '<p>' + receivedData.email + '</p>'
+    // profileInfoHTMLString +=    '<p>' + receivedData.blog + '</p>'
+    // profileInfoHTMLString +=    '<p>' + receivedData.created_at + '<p>'
+    // profileInfoHTMLString += '</div>' 
+
+
+
+    //need to get icons for items below
+    // profileInfo += '<div>' +receivedData.followers_url+ '<div>'
+    // profileInfo += '<div>' +receivedData.starred_url+ '<div>'
+    // profileInfo += '<div>' +receivedData.following_url+ '<div>'
+
+
