@@ -7,7 +7,7 @@
 
 
 // var url: https://api.github.com/users/thuy-n3
-
+ 
 
 
 console.log($)
@@ -65,7 +65,7 @@ var showGitData = function(receivedData) {
     profileInfoHTMLString +=    '<div class="followerStats">' + '<h3>3</h3>' + '<span class=followerTitle>followers</span>' + '</div>'
     profileInfoHTMLString +=    '<div class="followerStats">' + '<h3>3</h3>' + '<span class=followerTitle>starred</span>' + '</div>'
     profileInfoHTMLString +=    '<div class="followerStats">' + '<h3>3</h3>' + '<span class=followerTitle>following</span>' + '</div>'
-    profileInfoHTMLString += '</div>' 
+    profileInfoHTMLString += '</div>' //need to insert working link
 
 
     profileContainer.innerHTML = profileInfoHTMLString
@@ -106,12 +106,12 @@ var showRepoData = function(receivedRepoData) {
 
 //------------Profile Search on Keypress -------------------------------
 
-var searchInput_el = document.querySelector(".searchInput")
+var searchInput_el = document.querySelector(".searchInput") //selecting the search box
 
 console.log(searchInput_el)
 
 
-searchInput_el.addEventListener("keypress", function(evt){
+searchInput_el.addEventListener("keypress", function(evt){  
 
     // console.log("keypressed")
     // console.log(evt.keyCode)

@@ -1,20 +1,3 @@
-Recreate the HTML and CSS for the Github tab page (https://github.com/matthiasak?tab=repositories) as your design, and using two AJAX requests/Promises, pull your own profile information from Github:
-
-Your profile: https://api.github.com/users/<username>
-Your repos: https://api.github.com/users/<username>/repos
-After loading data from the Github API, write at least the following information to the DOM:
-
-name
-blog
-location
-email
-an <img> with its source as the avatar_url
-html_url
-for each repo owned by your user, list that repo in a <ul>
-Adventure Mode
-
-Include an <input> tag on your page that will allow users to search for a particular GitHub account. Once the user presses enter in the <input> tag, your app should make a new request to the GitHub server, and display information for the corresponding user.
-
 
 ///Notes:
 //cmd c copy line your one if its not select  
@@ -22,3 +5,6 @@ Include an <input> tag on your page that will allow users to search for a partic
 //cmd d grab everything with same lettering one at time (selecting)
 
 //control shift h 
+
+
+/*/---------------------------------------------------------//*/
